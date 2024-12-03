@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Koda Vidya</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Koda Vidya</h1>
+        <nav>
+          <a href="#" data-category="all" class="category active">All</a>
+          <a href="#" data-category="html" class="category">HTML</a>
+          <a href="#" data-category="css" class="category">CSS</a>
+          <a href="#" data-category="javascript" class="category">JavaScript</a>
+          <a href="#" data-category="python" class="category">Python</a>
+          <a href="#" data-category="java" class="category">Java</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="notes-container">
+        <div class="card" data-category="html,css,javascript">
+          <img src="javascript.jpg" alt="DOM APIs" />
+          <h2>DOM APIs</h2>
+          <p>Explore DOM-related APIs.</p>
+          <div class="btn-container">
+            <a
+              href="https://drive.google.com/drive/folders/15QPdp-dX21znX9wYveiAp-oSl2esYVpX?usp=sharing"
+              class="btn primary"
+              target="_blank"
+              >Source Code</a
+            >
+            <a
+              href="https://youtu.be/Vaf9qIzPSDM?si=086O2FWH5hbvm2Tq"
+              class="btn secondary"
+              target="_blank"
+              >Watch on YouTube</a
+            >
+          </div>
+        </div>
+        <div class="card" data-category="html,css,javascript">
+          <img src="javascript.jpg" alt="Strict Mode" />
+          <h2>Strict Mode</h2>
+          <p>Learn about JavaScript's Strict Mode.</p>
+          <div class="btn-container">
+            <a
+              href="https://drive.google.com/drive/folders/1GoKiBiAV15Yhi5uUgNFCfSrW-7Yf5oiK?usp=sharing"
+              class="btn primary"
+              target="_blank"
+              >Source Code</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="empty-message" style="display: none">
+        <p>No notes available for this category.</p>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
