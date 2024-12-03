@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', function () {
   // Get the empty message container
   const emptyMessage = document.querySelector('.empty-message');
 
+  const themeToggle = document.getElementById('theme-toggle');
+  const body = document.body;
+
   // Add event listener for each category
   categoryLinks.forEach((link) => {
     link.addEventListener('click', function (event) {
@@ -42,5 +45,24 @@ document.addEventListener('DOMContentLoaded', function () {
         emptyMessage.style.display = 'block';
       }
     });
+  });
+
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    body.classList.add(savedTheme);
+    themeToggle.textContent = savedTheme === 'dark-mode' ? '☀️' : '🌙';
+  }
+
+  // Toggle theme on button click
+  themeToggle.addEventListener('click', () => {
+    if (body.classList.contains('dark-mode')) {
+      body.classList.remove('dark-mode');
+      localStorage.setItem('theme', '');
+      themeToggle.textContent = '🌙';
+    } else {
+      body.classList.add('dark-mode');
+      localStorage.setItem('theme', 'dark-mode');
+      themeToggle.textContent = '☀️';
+    }
   });
 });
