@@ -10,15 +10,28 @@
     <header>
       <div class="container">
         <h1>Koda Vidya</h1>
-        <nav>
-          <a href="#" data-category="all" class="category active">All</a>
-          <a href="#" data-category="html" class="category">HTML</a>
-          <a href="#" data-category="css" class="category">CSS</a>
-          <a href="#" data-category="javascript" class="category">JavaScript</a>
-          <a href="#" data-category="python" class="category">Python</a>
-          <a href="#" data-category="java" class="category">Java</a>
+        <nav class="sub-container">
+          <div>
+            <a href="#" data-category="all" class="category active">All</a>
+            <a href="#" data-category="html" class="category">HTML</a>
+            <a href="#" data-category="css" class="category">CSS</a>
+            <a href="#" data-category="javascript" class="category"
+              >JavaScript</a
+            >
+            <a href="#" data-category="python" class="category">Python</a>
+            <a href="#" data-category="java" class="category">Java</a>
+            <!-- Dropdown for small screens -->
+            <select id="category-dropdown" class="category-dropdown">
+              <option value="all" selected>All</option>
+              <option value="html">HTML</option>
+              <option value="css">CSS</option>
+              <option value="javascript">JavaScript</option>
+              <option value="python">Python</option>
+              <option value="java">Java</option>
+            </select>
+          </div>
+          <button id="theme-toggle" class="theme-toggle">🌙</button>
         </nav>
-        <button id="theme-toggle" class="theme-toggle">🌙</button>
       </div>
     </header>
 
@@ -56,6 +69,25 @@
             >
             <a
               href="https://youtu.be/X2CVk3k3hw8"
+              class="btn secondary"
+              target="_blank"
+              >Watch on YouTube</a
+            >
+          </div>
+        </div>
+        <div class="card" data-category="html,css,javascript">
+          <img src="javascript.jpg" alt="Strict Mode" />
+          <h2>this keyword</h2>
+          <p>Learn about JavaScript's this keyword.</p>
+          <div class="btn-container">
+            <a
+              href="https://drive.google.com/drive/folders/1lsWRLFzCeF84G69ye6NeOKatPWF9kEQ_?usp=sharing"
+              class="btn primary"
+              target="_blank"
+              >Source Code</a
+            >
+            <a
+              href="https://youtu.be/wabw92gKAB0"
               class="btn secondary"
               target="_blank"
               >Watch on YouTube</a

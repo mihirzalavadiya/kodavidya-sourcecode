@@ -6,11 +6,14 @@ document.addEventListener('DOMContentLoaded', function () {
   const cards = document.querySelectorAll('.card');
   // Get the empty message container
   const emptyMessage = document.querySelector('.empty-message');
-
+  // Get the theme toggle button
   const themeToggle = document.getElementById('theme-toggle');
+  // Get the body element
   const body = document.body;
+  // Get the category dropdown for smaller screens
+  const dropdown = document.getElementById('category-dropdown');
 
-  // Add event listener for each category
+  // Add event listener for each category link
   categoryLinks.forEach((link) => {
     link.addEventListener('click', function (event) {
       event.preventDefault();
@@ -44,9 +47,43 @@ document.addEventListener('DOMContentLoaded', function () {
       } else {
         emptyMessage.style.display = 'block';
       }
+
+      // Update the dropdown to match the selected category
+      dropdown.value = category;
     });
   });
 
+  // Add event listener for the dropdown change
+  dropdown.addEventListener('change', function () {
+    const category = this.value;
+    categoryLinks.forEach((link) => {
+      if (link.getAttribute('data-category') === category) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+
+    let hasVisibleCards = false;
+    cards.forEach((card) => {
+      const cardCategories = card.getAttribute('data-category').split(',');
+
+      if (category === 'all' || cardCategories.includes(category)) {
+        card.style.display = 'block';
+        hasVisibleCards = true;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    if (hasVisibleCards) {
+      emptyMessage.style.display = 'none';
+    } else {
+      emptyMessage.style.display = 'block';
+    }
+  });
+
+  // Get the saved theme from localStorage
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme) {
     body.classList.add(savedTheme);
