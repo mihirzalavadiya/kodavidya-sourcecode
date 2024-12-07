@@ -88,7 +88,8 @@ header nav a.active {
 /* Notes Section */
 .notes-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  /* grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); */
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   padding: 20px;
 }
@@ -158,6 +159,12 @@ header nav a.active {
   color: #fff;
 }
 
+@media (max-width: 1024px) {
+  .notes-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+  }
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   header .container {
@@ -168,6 +175,7 @@ header nav a.active {
 
   .notes-container {
     padding: 10px;
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .card img {
